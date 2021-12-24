@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Week13_Lab</title>
+	<style type = "text/CSS">
+		.block {width: 50%; background-color: whitesmoke; border-radius: 10px; border-style: solid; border-color: silver;}
+		.label {font-family: arial;}
+		.input {width: 550px; height: 40px}
+		button {background-color: chocolate;}
+		button:hover{background-color: sienna;}
+	</style>
+</head>
+<body>
+	<center>
+		<div class = "block">
+			<h2 class = "label">JS Calculator</h2>
+			<form>
+				<p><label class = "label">Number 1</label></p>
+				<input id = "num1" name = "num1" type = "number" class = "input">
+				<p><label class = "label">Number 2</label></p>
+				<input id = "num2" name = "num2" type = "number" class = "input">
+				<p><label class = "label">Operate Way?</label></p>
+				<select id = "way" name = "method" class = "input">
+					<option value = "add">+</option>
+					<option value = "min">-</option>
+					<option value = "mul">*</option>
+					<option value = "div">/</option>
+				</select>
+			</form>
+				<br></br>
+				<button class = "input" onclick = "start()" type = "button">Run</button>
+				<p class = "label">Result = <span id="result"></span></p>
+		</div>
+	</center>
+	<script type="text/javascript">
+		function start(){
+			var num1 = parseInt(document.getElementById('num1').value);
+			var num2 = parseInt(document.getElementById('num2').value);
+			var way = document.getElementById('way').value;
+			var calculate;
+
+			if(way == 'add'){
+				calculate = num1 + num2;
+			}else if(way == 'min'){
+				calculate = num1 - num2;
+			}else if(way == 'mul'){
+				calculate = num1 * num2;
+			}else if(way == 'div'){
+				calculate = num1 / num2;
+			}
+			document.getElementById('result').innerHTML = calculate;
+		}
+	</script>
+</body>
+</html>
